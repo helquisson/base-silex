@@ -1,1 +1,5 @@
-Hello {{ name }} - {{ id }}
+{% extends 'base.twig' %}
+{% block title %} Page In {% endblock %}
+{% block content %}
+    Hello {{ name }} - {{ id }}
+{% endblock %}

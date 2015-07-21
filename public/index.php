@@ -25,7 +25,7 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
 });*/
 
 $app->get('/', function () use ($app) {
-    return $app->json(array("Hello World - "));
+    return $app['twig']->render('home.twig', array());
 });
 
 /* exemplo de middleware after */
@@ -41,7 +41,7 @@ $app->get('/', function () use ($app) {
 });*/
 
 /* rotas */
-$app->get('/users/{name}/{id}', function ($name, $id) use ($app) {
+$app->get('/page/{name}/{id}', function ($name, $id) use ($app) {
 
     if (is_null($name) || is_null($id)):
         return $app->redirect('/');
